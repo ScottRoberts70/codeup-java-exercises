@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ConsoleExercises {
     public static void main(String[] args) {
 //        double pi = 3.14159;
-//        System.out.printf("The value of pi is approximately %.2f",+pi);
+//        System.out.printf("The value of pi is approximately %.2f",pi);
 
 //        System.out.println("Enter an integer:");
 //        Scanner myObj = new Scanner(System.in);
@@ -12,10 +12,7 @@ public class ConsoleExercises {
 //        System.out.println("Your Integer is " + nextInt);
 
         Scanner in = new Scanner(System.in);
-//        String string1;
-//        String string2;
-//        String string3;
-//
+
 //        System.out.println("Enter three words and separate each with a blank: ");
 //        string1 = in.next();
 //        string2 = in.next();
@@ -24,6 +21,7 @@ public class ConsoleExercises {
 //        System.out.println(string1 + " \n" + string2 +
 //                " \n" + string3);
 
+//system.out.printf("You said: %s %s %s", string1, string2, string3);
 //error when less than 3 and it will display only the three word if to many.
 
 //        String sentence;
