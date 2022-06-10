@@ -35,11 +35,13 @@ public class ConsoleExercises {
         System.out.println("Enter the width and length seperated by a space!");
         double length = Double.parseDouble(in.next());
         double width = Double.parseDouble(in.next());
+        double height = Double.parseDouble(in.next());
 
         System.out.println("The length you entered was " +length);
         System.out.println("The width you entered was " +width);
         System.out.println("The area is " +length*width);
         System.out.println("The perimeter is " +((length*2) + (width*2)));
+        System.out.println("The volume is: " +((length) * (width))*height);
 
     }
 }
