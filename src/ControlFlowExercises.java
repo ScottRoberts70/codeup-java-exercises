@@ -82,16 +82,58 @@ import java.util.Scanner;
 //        Only continue if the user agrees to.
 
 public class ControlFlowExercises {
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter an integer you would like to go up to: ");
-        int num = input.nextInt();
-        System.out.println("number |" + " square |" + " cubed");
-        System.out.println("------ |" + " ------ |" + " -----");
-        int i = 1;
-        while (i < num+1) {
-            System.out.println(i+"      |  "      +(i*i)+"     |"+(i*i*i));
-            i++;
+//        String doThis;
+//        do {
+//            Scanner input = new Scanner(System.in);
+//            System.out.println("Enter an integer you would like to go up to: ");
+//            int num = input.nextInt();
+//            System.out.println("number |" + " square |" + " cubed");
+//            System.out.println("------ |" + " ------ |" + " -----");
+//            int i = 1;
+//            while (i <= num) {
+//                System.out.println(i + "      |  " + (i * i) + "     |" + (i * i * i));
+//                i++;
+//            }
+//            System.out.println("would you like to continue? [y] or [n]");
+//            doThis = input.next();
+//        } while (!doThis.equals("n"));
+//    }
+
+
+        //    Convert given number grades into letter grades.
+//
+//        Prompt the user for a numerical grade from 0 to 100.
+//        Display the corresponding letter grade.
+//        Prompt the user to continue.
+//        Assume that the user will enter valid integers for the grades.
+//        The application should only continue if the user agrees to.
+//        Grade Ranges:
+//
+//        A : 100 - 88
+//        B : 87 - 80
+//        C : 79 - 67
+//        D : 66 - 60
+//        F : 59 - 0
+        String ans;
+        do {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter an integer you would like to go up to: ");
+            int num = sc.nextInt();
+            if (num >= 88 && num <= 100) {
+                System.out.println("You got an: A");
+            } else if (num >= 80 && num <= 87) {
+                System.out.println("You got an: B ");
+            } else if (num >= 67 && num <= 79) {
+                System.out.println("You got an: C");
+            } else if (num >= 60 && num <= 66) {
+                System.out.println("You got an: D");
+            } else if (num >= 0 && num <= 59) {
+                System.out.println("You got an: F");
+            }
+            System.out.println("would you like to continue? [y] or [n]");
+            ans = sc.next();
+        } while (!ans.equals("n"));
         }
     }
-}
