@@ -5,7 +5,7 @@ import java.util.Scanner;
 //    public static void main(String[] args) {
 //        int i = 5;
 //        while (i <= 15) {
-//            System.out.println("i is " + i);
+//            System.out.println(i + " ");
 //            i++;
 //        }
 //    }
@@ -13,18 +13,20 @@ import java.util.Scanner;
 
 //public class ControlFlowExercises {
 //   public static void main(String[] args) {
-//       int i = 0, n = 100;
+//       int i = 0;
 //       do {System.out.println(i);
-//            i = i + 2; ;
-//       } while ( i <= n);
+//            i += 2; ;
+//       } while ( i <= 100);
 //   }
-//   }
+//}
+
+
 //public class ControlFlowExercises {
 //    public static void main(String[] args) {
-//        int i = 100, n = -10;
+//        int i = 100;
 //        do {System.out.println(i);
-//            i = i - 5; ;
-//        } while ( i >= n);
+//            i -= 5;
+//        } while ( i >= -10);
 //    }
 //}
 
@@ -32,20 +34,12 @@ import java.util.Scanner;
 //    public static void main(String[] args) {
 //        long i = 2;
 //        do {System.out.println(i);
-//            i = i * i;
+//            i *= i;
+//** another way  i = (long) Math.pow(i, 2) ********// have to cast to long because you went to a string
 //        } while ( i <= 1000000);
 //    }
 //}
 
-
-//public class ControlFlowExercises {
-//    public static void main(String[] args) {
-//        for (int i =
-//        do {System.out.println(i);
-//            i = i - 5; ;
-//        } while ( i >= n);
-//    }
-//}
 
 //public class ControlFlowExercises {
 //    public static void main(String[] args) {
@@ -54,6 +48,16 @@ import java.util.Scanner;
 //        }
 //    }
 //}
+
+//public class ControlFlowExercises {
+//    public static void main(String[] args) {
+//        for (int i = 2; i <= -1000000; i*=i){
+//            System.out.println(i);
+//        }
+//    }
+//}
+
+
 //Write a program that prints the numbers from 1 to 100.
 //        For multiples of three: print “Fizz” instead of the number.
 //        For the multiples of five: print “Buzz”.
@@ -62,7 +66,7 @@ import java.util.Scanner;
 //public class ControlFlowExercises {
 //    public static void main(String[] args) {
 //        for (int i = 1; i <= 100; i++) {
-//            if (((i % 3) == 0) && ((i % 5) == 0))
+//            if (i % 15) == 0)
 //                System.out.println("fizzbuzz");
 //            else if ((i % 3) == 0)
 //                System.out.println("fizz");
@@ -91,6 +95,7 @@ public class ControlFlowExercises {
 //            int num = input.nextInt();
 //            System.out.println("number |" + " square |" + " cubed");
 //            System.out.println("------ |" + " ------ |" + " -----");
+        //------System.out.printf("%-6d  |  %-7d  |  %-5d %n, table, square, cubed}; but you have to make the variables
 //            int i = 1;
 //            while (i <= num) {
 //                System.out.println(i + "      |  " + (i * i) + "     |" + (i * i * i));
@@ -116,10 +121,11 @@ public class ControlFlowExercises {
 //        C : 79 - 67
 //        D : 66 - 60
 //        F : 59 - 0
-        String ans;
-        do {
+
+        boolean decision = true;
+        while (decision) {
             Scanner sc = new Scanner(System.in);
-            System.out.println("Enter a numeric grade value: ");
+            System.out.println("Enter a numeric grade value between (0-100): ");
             int num = sc.nextInt();
             if (num >= 88 && num <= 100) {
                 System.out.println("You got an: A");
@@ -133,7 +139,10 @@ public class ControlFlowExercises {
                 System.out.println("You got an: F");
             }
             System.out.println("would you like to continue? [y] or [n]");
-            ans = sc.next();
-        } while (!ans.equals("n"));
+            String userChoice = sc.next();
+            if (userChoice.equalsIgnoreCase("n")) {
+                decision = false;
+            }
+          }
         }
     }
