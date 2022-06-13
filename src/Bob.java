@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Bob {
     public static void main(String[] args) {
+        String ans;
+        do {
         Scanner input = new Scanner(System.in);
         System.out.println("Say something to Bob: ");
         String answer = input.nextLine();
@@ -14,5 +16,9 @@ public class Bob {
         }else {
             System.out.println("Whatever.");
         }
+            System.out.println("Keep talking to Bob? [y] or [n]");
+            ans = input.next();
+        } while (!ans.equals("n"));
+        }
     }
-}
+
