@@ -21,5 +21,6 @@ public class MethodsExercises {
         System.out.println(division(10, 5));
         System.out.println(modulous(10, 5));
     }
+    // if you divide by zero you get Exception in thread "main" java.lang.ArithmeticException: divide by zero
 }
 
