@@ -119,7 +119,7 @@ public class ControlFlowExercises {
         String ans;
         do {
             Scanner sc = new Scanner(System.in);
-            System.out.println("Enter an integer you would like to go up to: ");
+            System.out.println("Enter a numeric grade value: ");
             int num = sc.nextInt();
             if (num >= 88 && num <= 100) {
                 System.out.println("You got an: A");
