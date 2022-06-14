@@ -2,25 +2,36 @@ import java.util.Scanner;
 
 
 public class HighLow {
-    public static void guessTheNum () {
+    public static void guessTheNum() {
         boolean decision = true;
         while (decision) {
-            int rndNum;
-            rndNum = (int) (Math.random()+1);
             Scanner sc = new Scanner(System.in);
-            System.out.print("Guess what the number is: ");
-            int userGuess = sc.nextInt();
-            if (userGuess < rndNum){
-                System.out.println("HIGHER");
-            } else if (userGuess > rndNum) {
-                System.out.println("LOWER");
-            } else {
-                System.out.println("GOOD GUESS!");
-            }
-            System.out.println("would you like to continue? [y] or [n]");
-            String userChoice = sc.next();
-            if (userChoice.equalsIgnoreCase("n")) {
-                decision = false;
+            int rndNum;
+            rndNum = (int) ((Math.random() * 10) + 1);
+            int tries = 5;
+            int i, guess;
+            System.out.println(
+                    "A number is chosen between 1 to 10.\nGuess the number within 5 trials.");
+            for (i = 0; i < tries; i++) {
+                System.out.println(
+                        "Guess the number:");
+                guess = sc.nextInt();
+                if (rndNum == guess) {
+                    System.out.println("GOOD GUESS");
+                    System.out.println("Would you like to try again? [y] or [n]");
+                    String userChoice = sc.next();
+                    if (userChoice.equalsIgnoreCase("n")) {
+                        decision = false;
+                    }
+                } else if (rndNum > guess
+                        && i != tries - 1) {
+                    System.out.println(
+                            "HIGHER than " + guess);
+                } else if (rndNum < guess
+                        && i != tries - 1) {
+                    System.out.println(
+                            "LOWER than " + guess);
+                }
             }
         }
     }

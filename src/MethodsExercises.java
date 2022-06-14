@@ -25,7 +25,7 @@ import java.util.function.DoubleToIntFunction;
 //public class MethodsExercises {
 //    public static int getInteger(int min, int max) {
 //        Scanner sc = new Scanner(System.in);
-//        System.out.print("Enter a number between 1 and 10: ");
+//        System.out.print("Enter a number between " + min + " and " + max);
 //        int userInput = sc.nextInt();
 //        if (userInput > min && userInput < max) {
 //            System.out.println(userInput);
@@ -46,7 +46,7 @@ import java.util.function.DoubleToIntFunction;
 //            int num = sc.nextInt();
 //            long fact = 1;
 //            for (int i = 1; i <= num; i++) {
-//                fact = fact * i;
+//                fact *= i;
 //                if (num >= min && num <= max) {
 //                    System.out.println(i + "!" + ":" + fact);
 //                }
@@ -82,7 +82,7 @@ public class MethodsExercises {
             System.out.println("The first die comes up " + die1);
             System.out.println("The second die comes up " + die2);
             System.out.println("Your total roll is " + roll);
-            System.out.println("would you like to continue? [y] or [n]");
+            System.out.println("Would you like to Roll again? [y] or [n]");
             String userChoice = sc.next();
             if (userChoice.equalsIgnoreCase("n")) {
                 decision = false;
