@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.function.DoubleToIntFunction;
 
+
 //public class MethodsExercises {
 //    public static int addition(int num1, int num2) {
 //        return num1 + num2;   // If you don't use a return we can use static void instead of int. Using int is better though
@@ -35,43 +36,61 @@ import java.util.function.DoubleToIntFunction;
 //        return userInput;
 //    }
 
+//public class MethodsExercises {
+//
+//    public static void getFactorial(int min, int max) {
+//        boolean decision = true;
+//        while (decision) {
+//            Scanner sc = new Scanner(System.in);
+//            System.out.print("Enter a number between 1 and 10: ");
+//            int num = sc.nextInt();
+//            long fact = 1;
+//            for (int i = 1; i <= num; i++) {
+//                fact = fact * i;
+//                if (num >= min && num <= max) {
+//                    System.out.println(i + "!" + ":" + fact);
+//                }
+//            }
+//            System.out.println("would you like to continue? [y] or [n]");
+//            String userChoice = sc.next();
+//            if (userChoice.equalsIgnoreCase("n")) {
+//                decision = false;
+//            }
+//        }
+//    }
+//
+//    public static void main(String[] args) {
+//        getFactorial(1, 10);
+//    }
+//}
+
 
 public class MethodsExercises {
-    public static int getInteger(int min, int max) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number between 1 and 10: ");
-        int num = sc.nextInt();
-        long fact = 1;
-        for (int i = 1; i <= num; i++){
-            fact=fact*i;
-        }
-            if (num > min && num < max) {
-                System.out.println(" The factorial of  "+num+ " is " + fact);
-                return num;
+
+    public static void rollTheDice() {
+        boolean decision = true;
+        while (decision) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("How Many Sides of dice do you want?");
+            int dieSides = sc.nextInt();
+            int die1;
+            int die2;
+            int roll;
+            die1 = (int) (Math.random() * dieSides) + 1;
+            die2 = (int) (Math.random() * dieSides) + 1;
+            roll = die1 + die2;
+            System.out.println("The first die comes up " + die1);
+            System.out.println("The second die comes up " + die2);
+            System.out.println("Your total roll is " + roll);
+            System.out.println("would you like to continue? [y] or [n]");
+            String userChoice = sc.next();
+            if (userChoice.equalsIgnoreCase("n")) {
+                decision = false;
             }
-
-            return getInteger(1,11);
+        }
     }
-
 
     public static void main(String[] args) {
-        getInteger(1, 10);// this is starts the method within the main, even though I have the main after.
+        rollTheDice();
     }
 }
-//    Calculate the factorial of a number.
-//
-//        Prompt the user to enter an integer from 1 to 10.
-//        Display the factorial of the number entered by the user.
-//        Ask if the user wants to continue.
-//        Use a for loop to calculate the factorial.
-//        Assume that the user will enter an integer, but verify it’s between 1 and 10.
-//        Use the long type to store the factorial.
-//        Continue only if the user agrees to.
-//        A factorial is a number multiplied by each of the numbers before it.
-//        Factorials are denoted by the exclamation point (n!). Ex:
-//
-//
-//        1! = 1               = 1
-//        2! = 1 x 2           = 2
-//        3! = 1 x 2 x 3       = 6
-//        4! = 1 x 2 x 3 x 4   = 24
