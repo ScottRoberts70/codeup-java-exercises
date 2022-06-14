@@ -13,8 +13,7 @@ public class HighLow {
             System.out.println(
                     "A number is chosen between 1 to 10.\nGuess the number within 5 trials.");
             for (i = 0; i < tries; i++) {
-                System.out.println(
-                        "Guess the number:");
+                System.out.println("Guess the number:");
                 guess = sc.nextInt();
                 if (rndNum == guess) {
                     System.out.println("GOOD GUESS");
