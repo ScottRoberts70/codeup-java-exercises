@@ -94,3 +94,4 @@ public class MethodsExercises {
         rollTheDice();
     }
 }
+
