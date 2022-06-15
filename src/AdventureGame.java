@@ -101,6 +101,7 @@ public class AdventureGame {
 
                 if (heardsHealh <= 0) {
                     slowPrint(ANSI_RED + "Ms. Heard has lost. 10 Million to Mr. Depp, and " + userName + " GETS A PAYDAY!\n" + ANSI_RESET);
+                    break;
                 }
 
                 //---------DEFENSE ATTACK-------------//
@@ -114,7 +115,6 @@ public class AdventureGame {
                 if (deppsHealth <= 0) {
                     slowPrint(ANSI_RED + "Mr. Depp has lost. 10 Million awarded to Ms. Heard and " + userName + " is  FIRED!\n" + ANSI_RESET);
                 }
-
             }
 
             //----------REPLAY or ENDGAME---------------------//
