@@ -1,3 +1,4 @@
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -10,8 +11,8 @@ public class AdventureGame {
             //--------ALL THE VARIABLES-----------//
             int dObjection = 3;
             int objectionIncrease = 5;
-            int deppsHealth = 100;
-            int heardsHealh = 100;
+            int deppsHealth = 50;
+            int heardsHealh = 50;
 
             //---------START CONVO--------------//
             Scanner sc = new Scanner(System.in);
@@ -32,7 +33,7 @@ public class AdventureGame {
                 sideChoice = sc.next();
             }
             if (sideChoice.equalsIgnoreCase("d")) {
-                heardsHealh += 15;  //---give Ms. Herd extra health to counter your health potions!-------//
+                heardsHealh += 5;  //---give Ms. Herd extra health to counter your health potions!-------//
                 System.out.printf("Welcome %s, to Mr. Depp's defense team!\n You have %d Objections, use them wisely !\n", userName, dObjection);
             }
             if (sideChoice.equalsIgnoreCase("p")) {
@@ -49,29 +50,22 @@ public class AdventureGame {
                 slowPrint(ANSI_RED + "The Judge over rules and starts the legal battle!" + ANSI_RESET);
             }
 
-            //-------------TRIAL STARTS/LEGAL BATTLE--------------------//
 
             while (heardsHealh > 0 && deppsHealth > 0) {
                 int prosDamage = proAttack();
                 int defDamage = defAttack();
-                heardsHealh -= defDamage;
 
-                if (heardsHealh <= 0) heardsHealh = 0;
-                System.out.printf("You're defense team calls a witness and deals" + ANSI_RED_BACKGROUND + ANSI_BLACK +" %d damage." + ANSI_RESET + "\n Ms. Heard has" + ANSI_GREEN_BACKGROUND + ANSI_BLACK + " %d health " + ANSI_RESET + "remaining.\n", defDamage, heardsHealh);
-
-                //------------IF PROSECUTION LOSES--------------//
-
-                if (heardsHealh <= 0) {
-                    slowPrint(ANSI_RED + "Ms. Heard has lost. 10 Million to Mr. Depp, and " + userName + " GETS A PAYDAY!\n" + ANSI_RESET);
+                System.out.println(ANSI_YELLOW + "Do you want to cross-examine or rest? [c] or [r]?"+ ANSI_RESET);
+                String crossCheck = sc.next();
+                while (!crossCheck.equalsIgnoreCase("c") && !crossCheck.equalsIgnoreCase("r")) {
+                    slowPrint(ANSI_YELLOW + userName + " Are you wanting a contempt charge? Answer with [c] or [r]!" + ANSI_RESET);
+                    crossCheck = sc.next();
+                }
+                if (crossCheck.equalsIgnoreCase("r")) {
+                    System.out.println("Fine, Rest!");
+                    System.exit(0);
                 }
 
-                deppsHealth -= prosDamage;
-                if (deppsHealth <= 0) deppsHealth = 0;
-                System.out.printf("The prosecution calls a witness and deals" + ANSI_RED_BACKGROUND + ANSI_BLACK + " %d damage." + ANSI_RESET + "\n Mr. Depp has" + ANSI_GREEN_BACKGROUND + ANSI_BLACK + " %d health" + ANSI_RESET + "remaining.\n", prosDamage, deppsHealth);
-
-                if (deppsHealth <= 0) {
-                    slowPrint(ANSI_RED + "Mr. Depp has lost. 10 Million awarded to Ms. Heard and " + userName + " is  FIRED!\n" + ANSI_RESET);
-                }
                 //-------------JURY INFLUENCE POTION----------//
 
                 if (sideChoice.equalsIgnoreCase("d")) {
@@ -86,6 +80,25 @@ public class AdventureGame {
                             break;
                         }
                     }
+                }
+                heardsHealh -= defDamage;
+                if (heardsHealh <= 0) heardsHealh = 0;
+                System.out.printf("You're defense team calls a witness and deals" + ANSI_RED_BACKGROUND + ANSI_BLACK +" %d damage." + ANSI_RESET + "\n Ms. Heard has" + ANSI_GREEN_BACKGROUND + ANSI_BLACK + " %d health " + ANSI_RESET + "remaining.\n", defDamage, heardsHealh);
+
+
+                //------------IF PROSECUTION LOSES--------------//
+                if (heardsHealh <= 0) {
+                    slowPrint(ANSI_RED + "Ms. Heard has lost. 10 Million to Mr. Depp, and " + userName + " GETS A PAYDAY!\n" + ANSI_RESET);
+                }
+
+                deppsHealth -= prosDamage;
+                if (deppsHealth <= 0) deppsHealth = 0;
+                System.out.printf("The prosecution calls a witness and deals" + ANSI_RED_BACKGROUND + ANSI_BLACK + " %d damage." + ANSI_RESET + "\n Mr. Depp has" + ANSI_GREEN_BACKGROUND + ANSI_BLACK + " %d health" + ANSI_RESET + "remaining.\n", prosDamage, deppsHealth);
+
+                //------------IF DEFENSE LOSES--------------//
+
+                if (deppsHealth <= 0) {
+                    slowPrint(ANSI_RED + "Mr. Depp has lost. 10 Million awarded to Ms. Heard and " + userName + " is  FIRED!\n" + ANSI_RESET);
                 }
 
             }
