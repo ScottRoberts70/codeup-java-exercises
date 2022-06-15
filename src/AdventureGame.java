@@ -5,10 +5,14 @@ import java.util.concurrent.TimeUnit;
 
 public class AdventureGame {
     public static void judgeAndJury() {
+
         //----------USED TO START GAME OVER-------//
+
         boolean decision = true;
         while (decision) {
+
             //--------ALL THE VARIABLES-----------//
+
             int dObjection = 3;
             int objectionIncrease = 5;
             int deppsHealth = 50;
@@ -50,17 +54,21 @@ public class AdventureGame {
                 slowPrint(ANSI_RED + "The Judge over rules and starts the legal battle!" + ANSI_RESET);
             }
 
+            //----------CALL MY ATTACK METHODS----------------//
 
             while (heardsHealh > 0 && deppsHealth > 0) {
                 int prosDamage = proAttack();
                 int defDamage = defAttack();
 
-                System.out.println(ANSI_YELLOW + "Do you want to cross-examine or rest? [c] or [r]?"+ ANSI_RESET);
+                System.out.println(ANSI_YELLOW + "Do you want to cross-examine or rest? [c] or [r]?" + ANSI_RESET);
                 String crossCheck = sc.next();
                 while (!crossCheck.equalsIgnoreCase("c") && !crossCheck.equalsIgnoreCase("r")) {
                     slowPrint(ANSI_YELLOW + userName + " Are you wanting a contempt charge? Answer with [c] or [r]!" + ANSI_RESET);
                     crossCheck = sc.next();
                 }
+
+                //----------------CONTINUE OR QUIT-------------//
+
                 if (crossCheck.equalsIgnoreCase("r")) {
                     System.out.println("Fine, Rest!");
                     System.exit(0);
@@ -81,15 +89,21 @@ public class AdventureGame {
                         }
                     }
                 }
+
+                //---------PROSECUTIONS ATTACK-------------//
+
                 heardsHealh -= defDamage;
                 if (heardsHealh <= 0) heardsHealh = 0;
-                System.out.printf("You're defense team calls a witness and deals" + ANSI_RED_BACKGROUND + ANSI_BLACK +" %d damage." + ANSI_RESET + "\n Ms. Heard has" + ANSI_GREEN_BACKGROUND + ANSI_BLACK + " %d health " + ANSI_RESET + "remaining.\n", defDamage, heardsHealh);
+                System.out.printf("You're defense team calls a witness and deals" + ANSI_RED_BACKGROUND + ANSI_BLACK + " %d damage." + ANSI_RESET + "\n Ms. Heard has" + ANSI_GREEN_BACKGROUND + ANSI_BLACK + " %d health " + ANSI_RESET + "remaining.\n", defDamage, heardsHealh);
 
 
                 //------------IF PROSECUTION LOSES--------------//
+
                 if (heardsHealh <= 0) {
                     slowPrint(ANSI_RED + "Ms. Heard has lost. 10 Million to Mr. Depp, and " + userName + " GETS A PAYDAY!\n" + ANSI_RESET);
                 }
+
+                //---------DEFENSE ATTACK-------------//
 
                 deppsHealth -= prosDamage;
                 if (deppsHealth <= 0) deppsHealth = 0;
@@ -104,7 +118,8 @@ public class AdventureGame {
             }
 
             //----------REPLAY or ENDGAME---------------------//
-            System.out.println(ANSI_WHITE_BACKGROUND + ANSI_BLACK + "Do you want a re-trial? [y] or [n]"+ ANSI_RESET);
+
+            System.out.println(ANSI_WHITE_BACKGROUND + ANSI_BLACK + "Do you want a re-trial? [y] or [n]" + ANSI_RESET);
             String userContinue = sc.next();
             if (userContinue.equalsIgnoreCase("n")) {
                 decision = false;
