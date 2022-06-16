@@ -15,7 +15,7 @@ public class Input {
     }
 
     public boolean yesNo() {
-        System.out.println("Please enter [y] or [n]");
+        System.out.println("Do you want to create another circle? [y] or [n]");
         String userInput = scanner.next();
         if (userInput.equalsIgnoreCase("y")) {
             return true;
