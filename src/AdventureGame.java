@@ -40,7 +40,7 @@ public class AdventureGame {
                 sideChoice = sc.next();
             }
             if (sideChoice.equalsIgnoreCase("d")) {
-                heardsHealh += 5;  //---give Ms. Herd extra health to counter your health potions!-------//
+                heardsHealh += 10;  //---give Ms. Herd extra health to counter your health potions!-------//
                 System.out.printf("Welcome %s, to Mr. Depp's defense team!\n You have %d Objections, use them wisely !\n", userName, dObjection);
             }
             if (sideChoice.equalsIgnoreCase("p")) {
