@@ -43,7 +43,7 @@ public class Input {
     }
 
 
-    double getDouble(double min, double max) {
+    public double getDouble(double min, double max) {
         System.out.println("Please enter an integer between 1 and 10 with a decimal!");
         double enterDbl = scanner.nextDouble();
         while (enterDbl < min || enterDbl > max) {
@@ -54,7 +54,7 @@ public class Input {
     }
 
 
-    double getDouble() {
+    public double getDouble() {
         System.out.println("Please enter a integer!");
         double enterAdub = scanner.nextDouble();
         return enterAdub;
