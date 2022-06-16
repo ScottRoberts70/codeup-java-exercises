@@ -10,7 +10,6 @@ public class Person {
     }
 
     public String sayHello() {
-//TODO: print a message to the console using the person's name
         return String.format("Hello %s !", this.name);
     }
 
