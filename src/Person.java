@@ -9,8 +9,9 @@ public class Person {
     this.name = name;
     }
 
-    public void sayHello() {
+    public int sayHello() {
         System.out.printf("Hello %s !", this.name);
+        return sayHello();
     }
 
     public Person(String name) {
@@ -20,7 +21,7 @@ public class Person {
     public static void main(String[] args) {
         Person scott = new Person("Scott");
         System.out.println(scott.getName());
-        System.out.printf(scott.sayHello());
+        System.out.println(scott.sayHello());
 
     }
 

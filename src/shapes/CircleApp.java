@@ -14,7 +14,7 @@ public class CircleApp {
             Input input = new Input();
             Circle circle = new Circle(input.getDouble());
             Double rad = circle.getRadius();
-            System.out.println("The radius of your circle is: " +rad);
+            System.out.println("The radius of your circle is " + rad);
             Double circum = circle.getCircumference();
             System.out.println("The circumference is " +circum);
             Double area = circle.getArea();
