@@ -10,7 +10,6 @@ public class CircleApp {
 
     public static void main(String[] args) {
         int count = 0;
-
         while (true) {
             Input input = new Input();
             Circle circle = new Circle(input.getDouble());

@@ -24,7 +24,6 @@ public class Input {
         }
     }
 
-
     public int getInt(int min, int max) {
         System.out.println("Please enter an integer between 1 and 10!");
         int enterInt = scanner.nextInt();
@@ -38,8 +37,8 @@ public class Input {
 
     public int getInt() {
         System.out.println("Please enter an integer!");
-        int enterAInt = scanner.nextInt();
-        return enterAInt;
+        return scanner.nextInt();
+
     }
 
 
@@ -56,19 +55,9 @@ public class Input {
 
     public double getDouble() {
         System.out.println("Please enter a integer!");
-        double enterAdub = scanner.nextDouble();
-        return enterAdub;
+        return scanner.nextDouble();
     }
 
-
-    public static void main(String[] args) {
-        Input input = new Input ();
-        System.out.println(input.getInt());
-        System.out.println(input.getInt(1, 10));
-        System.out.println(input.getDouble(1, 10));
-        System.out.println(input.getDouble());
-        System.out.println(input.yesNo());
-    }
 }
 
 
