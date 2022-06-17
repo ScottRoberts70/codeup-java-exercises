@@ -12,10 +12,10 @@ public class ArraysExercises {
         int[] numbers = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(numbers));
 
-        String[] people = new String[3];
-        people[0] = "Scott";
-        people[1] = "Jimmy";
-        people[2] = "Mike";
+            String[] people = new String[3];
+            people[0] = "Scott";
+            people[1] = "Jimmy";
+            people[2] = "Mike";
 
         for (String peeps : people) {
             System.out.println(peeps);
