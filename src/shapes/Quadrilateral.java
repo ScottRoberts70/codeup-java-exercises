@@ -18,7 +18,7 @@ abstract class Quadrilateral extends Shape implements Measurable{
         return width;
     }
 
-    public abstract void setLength();
+     abstract void setLength();
 
-    public abstract void setWidth();
+     abstract void setWidth();
 }

@@ -4,6 +4,16 @@ public class ShapesTest {
 
     public static void main(String[] args) {
 
+        Measurable myShape = new Square(5);
+        System.out.println(myShape.getPerimeter());
+        System.out.println(myShape.getArea());
+
+        Measurable myShape1 = new Rectangle(4, 5);
+        System.out.println(myShape1.getPerimeter());
+        System.out.println(myShape.getArea());
+
+
+
 //        Rectangle box1 = new Rectangle(4, 5);
 //        System.out.println("Your perimeter is: " + ANSI_RED + box1.getPerimeter()+ANSI_RESET);
 //        System.out.println("Your are is : " + box1.getArea());
