@@ -4,11 +4,11 @@ public class ShapesTest {
 
     public static void main(String[] args) {
 
-        Measurable myShape = new Square(5);
+        Measurable myShape = new Square(4);
         System.out.println(myShape.getPerimeter());
         System.out.println(myShape.getArea());
 
-        Measurable myShape1 = new Rectangle(4, 5);
+        Measurable myShape1 = new Rectangle(9, 10);
         System.out.println(myShape1.getPerimeter());
         System.out.println(myShape.getArea());
 
