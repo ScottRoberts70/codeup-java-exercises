@@ -4,60 +4,68 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+
 public class GradesApplication {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        HashMap<String, Student> students = new HashMap<>();
-        Student mike = new Student("Mike");
-        mike.addGrade(95);
-        mike.addGrade(92);
-        mike.addGrade(94);
-        students.put("mfriend2", mike);
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            HashMap<String, Student> students = new HashMap<>();
+            Student mike = new Student("Mike");
+            mike.addGrade(95);
+            mike.addGrade(92);
+            mike.addGrade(94);
+            students.put("mfriend2", mike);
 
-        Student justin = new Student("Justin");
-        justin.addGrade(78);
-        justin.addGrade(82);
-        justin.addGrade(90);
-        students.put("jwelsh89", justin);
+            Student justin = new Student("Justin");
+            justin.addGrade(78);
+            justin.addGrade(82);
+            justin.addGrade(90);
+            justin.addGrade(78);
+            students.put("jwelsh89", justin);
 
-        Student joey = new Student("Joey");
-        mike.addGrade(90);
-        mike.addGrade(83);
-        mike.addGrade(72);
-        students.put("joeyDiaz69", joey);
+            Student joey = new Student("Joey");
+            joey.addGrade(90);
+            joey.addGrade(83);
+            joey.addGrade(72);
+            joey.addGrade(68);
+            students.put("joeyDiaz69", joey);
 
-        Student sam = new Student("Sam");
-        mike.addGrade(82);
-        mike.addGrade(80);
-        mike.addGrade(78);
-        students.put("sammy24", sam);
+            Student sam = new Student("Sam");
+            sam.addGrade(82);
+            sam.addGrade(80);
+            sam.addGrade(78);
+            sam.addGrade(77);
+            students.put("sammy24", sam);
 
-        System.out.println("Welcome!\n");
-        System.out.println("Here are the GitHub usernames of our students :\n");
-        students.forEach((key, value) -> System.out.printf(" | " + key));
+            System.out.println("Welcome!\n");
+            System.out.println("Here are the GitHub usernames of our students :\n");
+            students.forEach((key, value) -> System.out.printf(" | " + key));
 
-        System.out.println("\nWhat student would you like to see more information on? ");
-        String choice = scanner.next();
+            System.out.println("\nWhat student would you like to see more information on? ");
+            String choice = scanner.next();
+            if (students.containsKey(choice)) {
+              System.out.println("The grades for " +ANSI_GREEN  + students.get(choice).getName() +ANSI_RESET+ " are: "  + (students.get(choice).getGrades()));
+                System.out.printf("Name:" +ANSI_GREEN + " %s "+ANSI_RESET+ "GitHubName:" +ANSI_GREEN + " %s "+ANSI_RESET+"\n  Current Average: " +ANSI_GREEN + " %.2f\n "+ANSI_RESET, students.get(choice).getName(), choice, students.get(choice).getGradeAverage());
 
-        while (!students.containsKey(choice)) {
-            System.out.println("Sorry,  no student with a GitHub username of " + choice);
-            System.out.println("Do you want to begin the trial [y] or [n]?");
+            } else if (!students.containsKey(choice)) {
+                slowPrint(ANSI_RED+"\nNo student with that name!\n"+ANSI_RESET);
+            }
+            System.out.println("Do you want to try another student [y] or [n]?");
             String beginChoice = scanner.next();
-
             while (!beginChoice.equalsIgnoreCase("y") && !beginChoice.equalsIgnoreCase("n")) {
-                slowPrint(ANSI_YELLOW + "Please answer with [y] or [n]!" + ANSI_RESET);
+                slowPrint(ANSI_YELLOW +  "Answer with [y] or [n]!" + ANSI_RESET);
                 beginChoice = scanner.next();
             }
             if (beginChoice.equalsIgnoreCase("n")) {
+                slowPrint(ANSI_RED + "FINE GOODBYE!" + ANSI_RESET);
                 break;
+            }
+            if (beginChoice.equalsIgnoreCase("y")) {
+                continue;
             }
         }
     }
-
-
-
-
-
 
 
 
