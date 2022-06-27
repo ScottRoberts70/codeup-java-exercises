@@ -15,7 +15,7 @@ public class Input {
     }
 
     public boolean yesNo() {
-//        System.out.println("Do you want to create another circle? [y] or [n]");
+        System.out.println("Do you want to create another circle? [y] or [n]");
         String userInput = scanner.next();
         if (userInput.equalsIgnoreCase("y")) {
             return true;
@@ -34,11 +34,16 @@ public class Input {
         return enterInt;
     }
 
-
+    int thisInt;
     public int getInt() {
         System.out.println("Please enter an integer!");
-        return scanner.nextInt();
-
+        try {
+            Integer.valueOf(getString());
+        } catch (NumberFormatException e) {
+            System.out.println(thisInt + " This should be a number!");
+            e.printStackTrace();
+        }
+        return thisInt;
     }
 
 
@@ -52,14 +57,18 @@ public class Input {
         return enterDbl;
     }
 
-
+    Double thisDub;
     public double getDouble() {
         System.out.println("Please enter a integer!");
-        return scanner.nextDouble();
+            try {
+                Integer.valueOf(getString());
+            } catch (NumberFormatException e) {
+                System.out.println(thisDub + " This here should be a number!");
+                e.printStackTrace();
+            }
+            return thisDub;
+        }
     }
-
-}
-
 
 
 

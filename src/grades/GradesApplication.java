@@ -51,8 +51,10 @@ public class GradesApplication {
             } else if (!students.containsKey(choice)) {
                 slowPrint(ANSI_RED+"\nNo student with that name!\n"+ANSI_RESET);
             }
+
             System.out.println("Do you want to try another student [y] or [n]?");
             String beginChoice = scanner.next();
+
             while (!beginChoice.equalsIgnoreCase("y") && !beginChoice.equalsIgnoreCase("n")) {
                 slowPrint(ANSI_YELLOW +  "Answer with [y] or [n]!" + ANSI_RESET);
                 beginChoice = scanner.next();
@@ -62,8 +64,8 @@ public class GradesApplication {
                 break;
             }
             if (beginChoice.equalsIgnoreCase("y")) {
-                continue;
             }
+
         }
     }
 
